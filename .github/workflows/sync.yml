@@ -11,9 +11,9 @@ jobs:
         steps:
             - name: Check out the code
               uses: actions/checkout@v2
-            - name: Fetch https://github.com/emdsa2/-mod.git changes
+            - name: Fetch https://github.com/emdsa2/-mod.git
               run: git fetch emdsa2/-mod
-            - name: Merge https://github.com/emdsa2/-mod.git changes
+            - name: Merge https://github.com/emdsa2/-mod.git
               run: git merge emdsa2/-mod/main --no-edit
             - name: Push changes to fork
               run: git push
