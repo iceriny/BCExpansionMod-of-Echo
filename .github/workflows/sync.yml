@@ -1,4 +1,4 @@
-name: Sync with upstream
+name: Sync with emdsa2/-mod
 
 on:
   schedule:
