@@ -1,18 +1,19 @@
 name: Sync with emdsa2/-mod
 
 on:
-  schedule:
-    - cron: '0 */6 * * *' # 每 6 小时执行一次同步
+    workflow_dispatch:
+    # schedule:
+    #     - cron: "0 */6 * * *" # 每 6 小时执行一次同步
 
 jobs:
-  sync:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Check out the code
-      uses: actions/checkout@v2
-    - name: Fetch emdsa2/-mod changes
-      run: git fetch emdsa2/-mod
-    - name: Merge emdsa2/-mod changes
-      run: git merge emdsa2/-mod/main --no-edit
-    - name: Push changes to fork
-      run: git push
+    sync:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out the code
+              uses: actions/checkout@v2
+            - name: Fetch emdsa2/-mod changes
+              run: git fetch emdsa2/-mod
+            - name: Merge emdsa2/-mod changes
+              run: git merge emdsa2/-mod/main --no-edit
+            - name: Push changes to fork
+              run: git push
